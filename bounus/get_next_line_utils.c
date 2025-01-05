@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "push_swap.h"
+#include "../src/push_swap.h"
 
 int	found_newline(t_list *list)
 {

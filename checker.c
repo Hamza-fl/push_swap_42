@@ -1,5 +1,17 @@
-#include "push_swap.h"
-#include "get_next_line.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/02 23:13:22 by hfalati           #+#    #+#             */
+/*   Updated: 2025/01/02 23:13:22 by hfalati          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "src/push_swap.h"
+#include "bounus/get_next_line.h"
 int	*full_a(char **av);
 void	read_from_stdin(t_stacks *stack);
 void exe_str(t_stacks *stack, char *str);
@@ -13,7 +25,7 @@ int main(int ac, char **av)
     {
         av++;
         if (ac == 2)
-            av= ft_split(*av, ' ');
+            av = ft_split(*av, ' ');
         stack.a = full_a(av);
         stack.size_a = push_swap_len(av);
         stack.b = malloc(stack.size_a * sizeof(int));
@@ -35,7 +47,7 @@ int	*full_a(char **av)
     int *a;
 
     size = push_swap_len(av);
-    a = (int *)malloc(size * sizeof(int));
+    a = malloc(size * sizeof(int));
     if (!a)
         return (0);
     i = -1;
@@ -55,12 +67,6 @@ void	read_from_stdin(t_stacks *stack)
         exe_str(stack, str);
         free(str);
         str = get_next_line(0);
-    }
-    int i = 0;
-    while (i < 4)
-    {
-        printf ("%d", stack->a[i]);
-        i++;
     }
     if (check_sorted(stack->a, stack->size_a, 0) && stack->size_b == 0)
         write (1, "OK\n", 3);
