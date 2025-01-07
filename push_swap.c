@@ -14,21 +14,23 @@
 
 int main (int ac, char **av)
 {
+	char *s;
+	char **str;
 
 	if (ac > 1)
 	{
-		av++;
-		if (ac == 2)
-			av = ft_split(*av, ' ');
-		push_swap(av);
+		ft_join_args(av, &s);
+		str = ft_split(s, ' ');
+		push_swap(str);
+		free(s);
 	}
-	int size = push_swap_len(av);
+	int size = push_swap_len(str);
 	int i = -1;
-	if (ac == 2)
+	if (ac >= 2)
 	{
 		while (++i < size)
-			free(av[i]);
-		free(av);
+			free(str[i]);
+		free(str);
 	}
 	return (0);
 }

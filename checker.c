@@ -20,14 +20,16 @@ void free_error(t_stacks *stack, int what);
 int main(int ac, char **av)
 {
     t_stacks stack;
+    char *s;
+    char **str;
 
     if (ac > 1)
     {
-        av++;
-        if (ac == 2)
-            av = ft_split(*av, ' ');
-        stack.a = full_a(av);
-        stack.size_a = push_swap_len(av);
+        ft_join_args(av, &s);
+		str = ft_split(s, ' ');
+        free(s);
+        stack.a = full_a(str);
+        stack.size_a = push_swap_len(str);
         stack.b = malloc(stack.size_a * sizeof(int));
         if (!stack.b)
         {

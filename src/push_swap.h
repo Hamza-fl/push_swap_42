@@ -17,6 +17,7 @@ void push_swap(char **av);
 char	**ft_split(char const *s, char c);
 int push_swap_len(char **av);
 int push_swap_atoi(char *av, int *stack);
+void    ft_join_args(char **av, char **str);
 
 int sort(t_stacks *stack, int size);
 int	sort_stack_a(t_stacks *stack, int len, int count);
