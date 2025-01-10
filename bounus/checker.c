@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/push_swap.h"
-#include "bounus/get_next_line.h"
+#include "push_swap.h"
+#include "get_next_line.h"
 int	*full_a(char **av);
 void	read_from_stdin(t_stacks *stack);
 void exe_str(t_stacks *stack, char *str);
