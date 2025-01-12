@@ -14,8 +14,9 @@
 
 void	rotate_a(t_stacks *stack, int bonus)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
+
 	if (stack->size_a == 0 || stack->size_a == 1)
 	{
 		printf ("1\n");
@@ -35,8 +36,8 @@ void	rotate_a(t_stacks *stack, int bonus)
 
 void	rotate_b(t_stacks *stack, int bonus)
 {
-	int tmp;
-	int i;
+	int	tmp;
+	int	i;
 
 	if (stack->size_b == 0 || stack->size_b == 1)
 		return ;
@@ -54,10 +55,11 @@ void	rotate_b(t_stacks *stack, int bonus)
 
 void	rotate_r(t_stacks *stack, int bonus)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
 
-	if (stack->size_a == 0 || stack->size_a == 1 || stack->size_b == 0 || stack->size_b == 1)
+	if (stack->size_a == 0 || stack->size_a == 1 || stack->size_b == 0
+		|| stack->size_b == 1)
 		return ;
 	tmp = stack->a[0];
 	i = 0;

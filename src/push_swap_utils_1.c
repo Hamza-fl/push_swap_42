@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   push_swap_utils_1.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:16:26 by hfalati           #+#    #+#             */
-/*   Updated: 2025/01/07 09:41:45 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/01/12 11:11:20 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
-}
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -82,7 +72,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (s3);
 }
 
-
 char	*ft_strdup(const char *s1)
 {
 	size_t	i;
@@ -101,29 +90,28 @@ char	*ft_strdup(const char *s1)
 	return (str);
 }
 
-void    ft_join_args(char **av, char **str)
+void	ft_join_args(char **av, char **str)
 {
-    int        i;
-    char    *tmp;
+	int		i;
+	char	*tmp;
 
-    i = 1;
-    *str = ft_strdup("");
-    if (*str == NULL)
-        return ;
-    while (av[i])
-    {
-        // check(av[i], str);
-        tmp = *str;
-        *str = ft_strjoin(tmp, av[i]);
-        free(tmp);
-        if (av[i + 1])
-        {
-            tmp = *str;
-            *str = ft_strjoin(tmp, " ");
-            free(tmp);
-        }
-        if (str == NULL)
-            break ;
-        i++;
-    }
+	i = 1;
+	*str = ft_strdup("");
+	if (*str == NULL)
+		return ;
+	while (av[i])
+	{
+		tmp = *str;
+		*str = ft_strjoin(tmp, av[i]);
+		free(tmp);
+		if (av[i + 1])
+		{
+			tmp = *str;
+			*str = ft_strjoin(tmp, " ");
+			free(tmp);
+		}
+		if (str == NULL)
+			break ;
+		i++;
+	}
 }

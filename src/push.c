@@ -14,7 +14,7 @@
 
 void	push_a(t_stacks *stack, int bonus)
 {
-	int i;
+	int	i;
 
 	if (stack->size_b)
 	{
@@ -27,7 +27,7 @@ void	push_a(t_stacks *stack, int bonus)
 		i = -1;
 		while (i++ < stack->size_b)
 			stack->b[i] = stack->b[i + 1];
-
+		if (!bonus)
 			write (1, "pa\n", 3);
 	}
 	else
@@ -36,7 +36,7 @@ void	push_a(t_stacks *stack, int bonus)
 
 void	push_b(t_stacks *stack, int bonus)
 {
-	int i;
+	int	i;
 
 	if (stack->size_a)
 	{

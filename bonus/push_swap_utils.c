@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int push_swap_len(char **av)
+int	push_swap_len(char **av)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (av[i])
@@ -22,11 +22,11 @@ int push_swap_len(char **av)
 	return (i);
 }
 
-int push_swap_atoi(char *str, int *stack)
+int	push_swap_atoi(char *str, int *stack)
 {
-	int i;
-	int sign;
-	unsigned int result;
+	int				i;
+	int				sign;
+	unsigned int	result;
 
 	i = 0;
 	sign = 1;
@@ -46,15 +46,15 @@ int push_swap_atoi(char *str, int *stack)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	if ((result > 2147483648 && sign == -1) || (result > 2147483647 && sign == 1))
+	if ((result > INT_MIN && sign == -1) || (result > INT_MAX && sign == 1))
 		error_detected(stack);
 	return (result * sign);
 }
 
-void check_doubles(int *stack,int size)
+void	check_doubles(int *stack, int size)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 1;
@@ -71,7 +71,17 @@ void check_doubles(int *stack,int size)
 	}
 }
 
-void error_detected(int *stack)
+size_t	ft_strlen(const char *str)
+{
+	size_t	len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
+
+void	error_detected(int *stack)
 {
 	free(stack);
 	write (1, "Error\n", 6);

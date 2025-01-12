@@ -11,9 +11,10 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	three_numbers_sort(t_stacks *stack);
 
-int sort(t_stacks *stack, int size)
+int	sort(t_stacks *stack, int size)
 {
 	if (check_sorted(stack->a, stack->size_a, 0) == 0)
 	{
@@ -29,8 +30,8 @@ int sort(t_stacks *stack, int size)
 
 int	check_sorted(int *a, int size, int order)
 {
-	int i;
-	
+	int	i;
+
 	i = 1;
 	if (order == 0)
 	{
@@ -55,29 +56,34 @@ int	check_sorted(int *a, int size, int order)
 
 void	three_numbers_sort(t_stacks *stack)
 {
-	if (stack->a[0] > stack->a[1] && stack->a[0] < stack->a[2] && stack->a[1] < stack->a[2])
+	if (stack->a[0] > stack->a[1] && stack->a[0] < stack->a[2]
+		&& stack->a[1] < stack->a[2])
 		swap_a(stack, 0);
-	if (stack->a[0] > stack->a[1] && stack->a[0] > stack->a[2] && stack->a[1] > stack->a[2])
+	if (stack->a[0] > stack->a[1] && stack->a[0] > stack->a[2]
+		&& stack->a[1] > stack->a[2])
 	{
 		swap_a(stack, 0);
 		reverse_rotate_a(stack, 0);
 	}
-	if (stack->a[0] > stack->a[1] && stack->a[0] > stack->a[2] && stack->a[1] < stack->a[2])
+	if (stack->a[0] > stack->a[1] && stack->a[0] > stack->a[2]
+		&& stack->a[1] < stack->a[2])
 		rotate_a(stack, 0);
-	if (stack->a[0] < stack->a[1] && stack->a[0] < stack->a[2] && stack->a[1] > stack->a[2])
+	if (stack->a[0] < stack->a[1] && stack->a[0] < stack->a[2]
+		&& stack->a[1] > stack->a[2])
 	{
 		swap_a(stack, 0);
 		rotate_a(stack, 0);
 	}
-	if (stack->a[0] < stack->a[1] && stack->a[0] > stack->a[2] && stack->a[1] > stack->a[2])
+	if (stack->a[0] < stack->a[1] && stack->a[0] > stack->a[2]
+		&& stack->a[1] > stack->a[2])
 		reverse_rotate_a(stack, 0);
 }
 
 void	tmp_sort(int *tmp_stack, int size)
 {
-	int i;
-	int j;
-	int tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	i = 0;
 	while (i < size)

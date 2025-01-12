@@ -34,8 +34,8 @@ void	reverse_rotate_a(t_stacks *stack, int bonus)
 
 void	reverse_rotate_b(t_stacks *stack, int bonus)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
 
 	if (stack->size_b == 0 || stack->size_b == 1)
 		return ;
@@ -53,10 +53,11 @@ void	reverse_rotate_b(t_stacks *stack, int bonus)
 
 void	reverse_rotate_r(t_stacks *stack, int bonus)
 {
-	int i;
-	int tmp;
+	int	i;
+	int	tmp;
 
-	if (stack->size_a == 0 || stack->size_a == 1 || stack->size_b == 0 || stack->size_b == 1)
+	if (stack->size_a == 0 || stack->size_a == 1 || stack->size_b == 0
+		|| stack->size_b == 1)
 		return ;
 	i = stack->size_a - 1;
 	tmp = stack->a[i];

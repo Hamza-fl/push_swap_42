@@ -12,10 +12,12 @@
 
 #include "push_swap.h"
 
-int main (int ac, char **av)
+int	main(int ac, char **av)
 {
-	char *s;
-	char **str;
+	char	*s;
+	char	**str;
+	int		size;
+	int		i;
 
 	if (ac > 1)
 	{
@@ -24,8 +26,8 @@ int main (int ac, char **av)
 		push_swap(str);
 		free(s);
 	}
-	int size = push_swap_len(str);
-	int i = -1;
+	size = push_swap_len(str);
+	i = -1;
 	if (ac >= 2)
 	{
 		while (++i < size)
@@ -35,16 +37,17 @@ int main (int ac, char **av)
 	return (0);
 }
 
-void push_swap(char **av)
+void	push_swap(char **av)
 {
-	t_stacks    stack;
-	int         size;
-	int         i;
+	t_stacks	stack;
+	int			size;
+	int			i;
+	int			j;
 
 	i = -1;
 	size = push_swap_len(av);
 	stack.a = malloc(sizeof(int) * size);
-	int j = 0;
+	j = 0;
 	if (!stack.a)
 		return ;
 	stack.size_a = size;
