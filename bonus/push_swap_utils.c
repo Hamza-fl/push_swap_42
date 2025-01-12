@@ -46,7 +46,7 @@ int	push_swap_atoi(char *str, int *stack)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	if ((result > INT_MIN && sign == -1) || (result > INT_MAX && sign == 1))
+	if ((result > (unsigned int)INT_MIN && sign == -1) || (result > (unsigned int)INT_MAX && sign == 1))
 		error_detected(stack);
 	return (result * sign);
 }

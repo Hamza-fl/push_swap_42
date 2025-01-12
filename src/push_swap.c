@@ -42,12 +42,10 @@ void	push_swap(char **av)
 	t_stacks	stack;
 	int			size;
 	int			i;
-	int			j;
 
 	i = -1;
 	size = push_swap_len(av);
 	stack.a = malloc(sizeof(int) * size);
-	j = 0;
 	if (!stack.a)
 		return ;
 	stack.size_a = size;
