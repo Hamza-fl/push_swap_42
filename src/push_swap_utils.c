@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 23:13:55 by hfalati           #+#    #+#             */
-/*   Updated: 2025/01/02 23:13:55 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/01/12 21:55:06 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,8 @@ int	push_swap_atoi(char *str, int *stack)
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			sign = -1;
-		i++;
-	}
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -46,7 +43,8 @@ int	push_swap_atoi(char *str, int *stack)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	if ((result > (unsigned int)INT_MIN && sign == -1) || (result > (unsigned int)INT_MAX && sign == 1))
+	if ((result > (unsigned int)INT_MIN && sign == -1)
+		|| (result > (unsigned int)INT_MAX && sign == 1))
 		error_detected(stack);
 	return (result * sign);
 }
