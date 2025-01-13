@@ -19,6 +19,7 @@ int	main(int ac, char **av)
 	int		size;
 	int		i;
 
+	str = NULL;
 	if (ac > 1)
 	{
 		ft_join_args(av, &s);
@@ -26,6 +27,8 @@ int	main(int ac, char **av)
 		push_swap(str);
 		free(s);
 	}
+	if (!str)
+		return (0);
 	size = push_swap_len(str);
 	i = -1;
 	if (ac >= 2)

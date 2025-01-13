@@ -30,6 +30,8 @@ int	main(int ac, char **av)
 		str = ft_split(s, ' ');
 		free(s);
 		stack.a = full_a(str);
+		if (!stack.a)
+			return (0);
 		stack.size_a = push_swap_len(str);
 		stack.b = malloc(stack.size_a * sizeof(int));
 		if (!stack.b)
