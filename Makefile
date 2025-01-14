@@ -2,7 +2,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 BONUS_NAME = checker
-SRC = src/ft_split.c src/push.c src/push_swap.c src/push_swap_utils_1.c src/push_swap_utils.c src/reverse.c src/rotate.c src/sort.c src/sort_stack.c src/swap.c
+SRC = mandatory/ft_split.c mandatory/push.c mandatory/push_swap.c mandatory/push_swap_utils_1.c mandatory/push_swap_utils.c mandatory/reverse.c \
+		mandatory/rotate.c mandatory/sort.c mandatory/sort_stack.c mandatory/swap.c
 SRCB = bonus/checker.c bonus/ft_split.c bonus/ft_strcmp.c bonus/get_next_line.c bonus/get_next_line_utils.c bonus/push.c bonus/push_swap_utils_1.c \
 		bonus/push_swap_utils.c bonus/reverse.c bonus/rotate.c bonus/sort.c bonus/sort_stack.c bonus/swap.c
 OBJ = $(SRC:.c=.o)
@@ -10,10 +11,10 @@ OBJB = $(SRCB:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) src/push_swap.h
+$(NAME): $(OBJ) mandatory/push_swap.h
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
-bonus: $(OBJB) bonus/push_swap.h
+bonus: $(OBJB) bonus/push_swap.h bonus/get_next_line.h
 	$(CC) $(CFLAGS) -o $(BONUS_NAME) $(OBJB)
 
 %.o: %.c
