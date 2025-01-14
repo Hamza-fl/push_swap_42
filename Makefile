@@ -1,4 +1,4 @@
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 BONUS_NAME = checker
@@ -10,10 +10,10 @@ OBJB = $(SRCB:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) src/push_swap.h
 	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
-bonus: $(OBJB)
+bonus: $(OBJB) bonus/push_swap.h
 	$(CC) $(CFLAGS) -o $(BONUS_NAME) $(OBJB)
 
 %.o: %.c

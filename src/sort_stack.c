@@ -35,12 +35,12 @@ int	sort_stack_a(t_stacks *stack, int len, int count)
 	while (len != numbers / 2 + numbers % 2)
 	{
 		if (stack->a[0] < med_numb && (len--))
-			push_b(stack, 0);
+			push_b(stack);
 		else if (++count)
-			rotate_a(stack, 0);
+			rotate_a(stack);
 	}
 	while (stack->size_a != numbers / 2 + numbers % 2 && count--)
-		reverse_rotate_a(stack, 0);
+		reverse_rotate_a(stack);
 	return (sort_stack_a(stack, numbers / 2 + numbers % 2, 0)
 		&& sort_stack_b(stack, numbers / 2, 0));
 }
@@ -52,7 +52,7 @@ int	sort_stack_b(t_stacks *stack, int len, int count)
 
 	if (check_sorted(stack->b, len, 1) == 1)
 		while (len--)
-			push_a(stack, 0);
+			push_a(stack);
 	if (len <= 3)
 	{
 		sort_three_b(stack, len);
@@ -64,12 +64,12 @@ int	sort_stack_b(t_stacks *stack, int len, int count)
 	while (len != numbers / 2)
 	{
 		if (stack->b[0] >= med_numb && len--)
-			push_a(stack, 0);
+			push_a(stack);
 		else if (++count)
-			rotate_b(stack, 0);
+			rotate_b(stack);
 	}
 	while (stack->size_b != numbers / 2 && count--)
-		reverse_rotate_b(stack, 0);
+		reverse_rotate_b(stack);
 	return (sort_stack_a(stack, numbers / 2 + numbers % 2, 0)
 		&& sort_stack_b(stack, numbers / 2, 0));
 }
@@ -79,7 +79,7 @@ void	sort_three_stack_a_b(t_stacks *stack, int len)
 	if (len == 2)
 	{
 		if (stack->a[0] > stack->a[1])
-			swap_a(stack, 0);
+			swap_a(stack);
 	}
 	else if (len == 3 && stack->size_a == 3)
 		three_numbers_sort(stack);
@@ -89,14 +89,14 @@ void	sort_three_stack_a_b(t_stacks *stack, int len)
 				&& stack->a[1] < stack->a[2]))
 		{
 			if (len == 3 && stack->a[0] > stack->a[1] && stack->a[2])
-				swap_a(stack, 0);
+				swap_a(stack);
 			else if (len == 3 && !(stack->a[2] > stack->a[0]
 					&& stack->a[2] > stack->a[1]))
 				len = ft_push(stack, len, 0);
 			else if (stack->a[0] > stack->a[1])
-				swap_a(stack, 0);
+				swap_a(stack);
 			else if (len++)
-				push_a(stack, 0);
+				push_a(stack);
 		}
 	}
 }
@@ -104,25 +104,25 @@ void	sort_three_stack_a_b(t_stacks *stack, int len)
 int	sort_three_b(t_stacks *stack, int len)
 {
 	if (len == 1)
-		push_a(stack, 0);
+		push_a(stack);
 	else if (len == 2)
 	{
 		if (stack->b[0] < stack->b[1])
-			swap_b(stack, 0);
+			swap_b(stack);
 		while (len--)
-			push_a(stack, 0);
+			push_a(stack);
 	}
 	else if (len == 3)
 	{
 		while (len || !(stack->a[0] < stack->a[1] && stack->a[1] < stack->a[2]))
 		{
 			if (len == 1 && stack->a[0] > stack->a[1])
-				swap_a(stack, 0);
+				swap_a(stack);
 			else if (len == 1 || (len >= 2 && stack->b[0] > stack->b[1])
 				|| (len == 3 && stack->b[0] > stack->b[2]))
 				len = ft_push(stack, len, 1);
 			else
-				swap_b(stack, 0);
+				swap_b(stack);
 		}
 	}
 	return (0);

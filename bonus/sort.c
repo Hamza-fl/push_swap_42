@@ -19,7 +19,7 @@ int	sort(t_stacks *stack, int size)
 	if (check_sorted(stack->a, stack->size_a, 0) == 0)
 	{
 		if (size == 2)
-			swap_a(stack, 0);
+			swap_a(stack);
 		else if (size == 3)
 			three_numbers_sort(stack);
 		else
@@ -58,25 +58,25 @@ void	three_numbers_sort(t_stacks *stack)
 {
 	if (stack->a[0] > stack->a[1] && stack->a[0] < stack->a[2]
 		&& stack->a[1] < stack->a[2])
-		swap_a(stack, 0);
+		swap_a(stack);
 	if (stack->a[0] > stack->a[1] && stack->a[0] > stack->a[2]
 		&& stack->a[1] > stack->a[2])
 	{
-		swap_a(stack, 0);
-		reverse_rotate_a(stack, 0);
+		swap_a(stack);
+		reverse_rotate_a(stack);
 	}
 	if (stack->a[0] > stack->a[1] && stack->a[0] > stack->a[2]
 		&& stack->a[1] < stack->a[2])
-		rotate_a(stack, 0);
+		rotate_a(stack);
 	if (stack->a[0] < stack->a[1] && stack->a[0] < stack->a[2]
 		&& stack->a[1] > stack->a[2])
 	{
-		swap_a(stack, 0);
-		rotate_a(stack, 0);
+		swap_a(stack);
+		rotate_a(stack);
 	}
 	if (stack->a[0] < stack->a[1] && stack->a[0] > stack->a[2]
 		&& stack->a[1] > stack->a[2])
-		reverse_rotate_a(stack, 0);
+		reverse_rotate_a(stack);
 }
 
 void	tmp_sort(int *tmp_stack, int size)
@@ -106,9 +106,9 @@ void	tmp_sort(int *tmp_stack, int size)
 int	ft_push(t_stacks *stack, int len, int push)
 {
 	if (push == 0)
-		push_b(stack, 0);
+		push_b(stack);
 	else
-		push_a(stack, 0);
+		push_a(stack);
 	len--;
 	return (len);
 }

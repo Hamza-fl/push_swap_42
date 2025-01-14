@@ -12,16 +12,13 @@
 
 #include "push_swap.h"
 
-void	rotate_a(t_stacks *stack, int bonus)
+void	rotate_a(t_stacks *stack)
 {
 	int	i;
 	int	tmp;
 
 	if (stack->size_a == 0 || stack->size_a == 1)
-	{
-		printf ("1\n");
 		return ;
-	}
 	tmp = stack->a[0];
 	i = 0;
 	while (i < stack->size_a)
@@ -30,11 +27,9 @@ void	rotate_a(t_stacks *stack, int bonus)
 		i++;
 	}
 	stack->a[i - 1] = tmp;
-	if (!bonus)
-		write (1, "ra\n", 3);
 }
 
-void	rotate_b(t_stacks *stack, int bonus)
+void	rotate_b(t_stacks *stack)
 {
 	int	tmp;
 	int	i;
@@ -49,11 +44,9 @@ void	rotate_b(t_stacks *stack, int bonus)
 		i++;
 	}
 	stack->b[i - 1] = tmp;
-	if (!bonus)
-		write (1, "rb\n", 3);
 }
 
-void	rotate_r(t_stacks *stack, int bonus)
+void	rotate_r(t_stacks *stack)
 {
 	int	i;
 	int	tmp;
@@ -71,6 +64,4 @@ void	rotate_r(t_stacks *stack, int bonus)
 	while (i++ < stack->size_b)
 		stack->b[i - 1] = stack->b[i];
 	stack->b[i - 1] = tmp;
-	if (!bonus)
-		write (1, "rr\n", 3);
 }

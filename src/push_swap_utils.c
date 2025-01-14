@@ -26,7 +26,7 @@ int	push_swap_atoi(char *str, int *stack)
 {
 	int				i;
 	int				sign;
-	unsigned int	result;
+	size_t			result;
 
 	i = 0;
 	sign = 1;
@@ -43,8 +43,8 @@ int	push_swap_atoi(char *str, int *stack)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	if ((result > (unsigned int)INT_MIN && sign == -1)
-		|| (result > (unsigned int)INT_MAX && sign == 1))
+	if ((result > 2147483648 && sign == -1)
+		|| (result > 2147483647 && sign == 1))
 		error_detected(stack);
 	return (result * sign);
 }
@@ -82,6 +82,6 @@ size_t	ft_strlen(const char *str)
 void	error_detected(int *stack)
 {
 	free(stack);
-	write (1, "Error\n", 6);
+	write (2, "Error\n", 6);
 	exit(1);
 }

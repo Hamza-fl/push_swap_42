@@ -83,27 +83,27 @@ void	read_from_stdin(t_stacks *stack)
 void	exe_str(t_stacks *stack, char *str)
 {
 	if (!ft_strcmp(str, "sa\n"))
-		swap_a(stack, 1);
+		swap_a(stack);
 	else if (!ft_strcmp(str, "sb\n"))
-		swap_b(stack, 1);
+		swap_b(stack);
 	else if (!ft_strcmp(str, "ss\n"))
-		swap_s(stack, 1);
+		swap_s(stack);
 	else if (!ft_strcmp(str, "ra\n"))
-		rotate_a(stack, 1);
+		rotate_a(stack);
 	else if (!ft_strcmp(str, "rb\n"))
-		rotate_b(stack, 1);
+		rotate_b(stack);
 	else if (!ft_strcmp(str, "rr\n"))
-		rotate_r(stack, 1);
+		rotate_r(stack);
 	else if (!ft_strcmp(str, "rra\n"))
-		reverse_rotate_a(stack, 1);
+		reverse_rotate_a(stack);
 	else if (!ft_strcmp(str, "rrb\n"))
-		reverse_rotate_b(stack, 1);
+		reverse_rotate_b(stack);
 	else if (!ft_strcmp(str, "rrr\n"))
-		reverse_rotate_r(stack, 1);
+		reverse_rotate_r(stack);
 	else if (!ft_strcmp(str, "pa\n"))
-		push_a(stack, 1);
+		push_a(stack);
 	else if (!ft_strcmp(str, "pb\n"))
-		push_b(stack, 1);
+		push_b(stack);
 	else
 		free_error(stack, 1);
 }
@@ -113,6 +113,9 @@ void	free_error(t_stacks *stack, int what)
 	free(stack->a);
 	free(stack->b);
 	if (what)
-		write (1, "Error\n", 6);
-	exit(1);
+	{
+		write (0, "Error\n", 6);
+		exit(1);
+	}
+	exit(0);
 }

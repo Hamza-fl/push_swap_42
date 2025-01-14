@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	reverse_rotate_a(t_stacks *stack, int bonus)
+void	reverse_rotate_a(t_stacks *stack)
 {
 	int	i;
 	int	tmp;
@@ -28,11 +28,10 @@ void	reverse_rotate_a(t_stacks *stack, int bonus)
 	}
 	stack->a[i] = tmp;
 	i = 0;
-	if (!bonus)
-		write (1, "rra\n", 4);
+	write (1, "rra\n", 4);
 }
 
-void	reverse_rotate_b(t_stacks *stack, int bonus)
+void	reverse_rotate_b(t_stacks *stack)
 {
 	int	i;
 	int	tmp;
@@ -47,11 +46,10 @@ void	reverse_rotate_b(t_stacks *stack, int bonus)
 		i--;
 	}
 	stack->b[i] = tmp;
-	if (!bonus)
-		write (1, "rrb\n", 4);
+	write (1, "rrb\n", 4);
 }
 
-void	reverse_rotate_r(t_stacks *stack, int bonus)
+void	reverse_rotate_r(t_stacks *stack)
 {
 	int	i;
 	int	tmp;
@@ -72,6 +70,5 @@ void	reverse_rotate_r(t_stacks *stack, int bonus)
 	while (i--)
 		stack->b[i] = stack->b[i - 1];
 	stack->b[i] = tmp;
-	if (!bonus)
-		write (1, "rrr\n", 4);
+	write (1, "rrr\n", 4);
 }

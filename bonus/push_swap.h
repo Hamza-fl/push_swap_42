@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 23:14:04 by hfalati           #+#    #+#             */
-/*   Updated: 2025/01/12 12:19:22 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/01/14 15:59:58 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
-# include <limits.h>
+
 
 typedef struct s_stacks
 {
@@ -44,20 +43,20 @@ int		ft_push(t_stacks *stack, int len, int push);
 
 void	three_numbers_sort(t_stacks *stack);
 
-void	swap_a(t_stacks *stack, int bonus);
-void	swap_b(t_stacks *stack, int bonus);
-void	swap_s(t_stacks *stack, int bonus);
+void	swap_a(t_stacks *stack);
+void	swap_b(t_stacks *stack);
+void	swap_s(t_stacks *stack);
 
-void	push_a(t_stacks *stack, int bonus);
-void	push_b(t_stacks *stack, int bonus);
+void	push_a(t_stacks *stack);
+void	push_b(t_stacks *stack);
 
-void	rotate_a(t_stacks *stack, int bonus);
-void	rotate_b(t_stacks *stack, int bonus);
-void	rotate_r(t_stacks *stack, int bonus);
+void	rotate_a(t_stacks *stack);
+void	rotate_b(t_stacks *stack);
+void	rotate_r(t_stacks *stack);
 
-void	reverse_rotate_a(t_stacks *stack, int bonus);
-void	reverse_rotate_b(t_stacks *stack, int bonus);
-void	reverse_rotate_r(t_stacks *stack, int bonus);
+void	reverse_rotate_a(t_stacks *stack);
+void	reverse_rotate_b(t_stacks *stack);
+void	reverse_rotate_r(t_stacks *stack);
 
 void	tmp_sort(int *tmp_stack, int size);
 #endif
