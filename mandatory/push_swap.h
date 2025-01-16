@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 23:14:04 by hfalati           #+#    #+#             */
-/*   Updated: 2025/01/14 15:59:15 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/01/16 10:04:02 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ typedef struct s_stacks
 	int	size_a;
 	int	size_b;
 }	t_stacks;
-
-
 
 int		ft_strcmp(char *s1, char *s2);
 void	push_swap(char **av);

@@ -12,6 +12,8 @@
 
 #include "push_swap.h"
 
+short	basic_check(int ac, char **nums);
+short	empty(int ac, char **nums);
 int	main(int ac, char **av)
 {
 	char	*s;
@@ -20,6 +22,11 @@ int	main(int ac, char **av)
 	int		i;
 
 	str = NULL;
+	if (basic_check(ac, av) == 0)
+	{
+		write (2, "Error\n", 6);
+		exit(1);
+	}
 	if (ac > 1)
 	{
 		ft_join_args(av, &s);
@@ -65,4 +72,41 @@ void	push_swap(char **av)
 	sort(&stack, size);
 	free(stack.a);
 	free(stack.b);
+}
+
+short	empty(int ac, char **nums)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (nums[i] && nums[i][0] != '\0')
+		i++;
+	if (i != ac)
+		return (0);
+	i = 0;
+	while (nums[i])
+	{
+		j = 0;
+		while(nums[i][j] == ' ')
+			j++;
+		if (nums[i][j] == '\0')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+short basic_check(int ac, char **nums)
+{
+	int i;
+
+	i = 0;
+	while (i < ac)
+	{
+		if (!empty(ac, nums))
+			return (0);
+		i++;
+	}
+	return (1);
 }

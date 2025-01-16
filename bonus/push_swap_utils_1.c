@@ -6,12 +6,13 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 09:16:26 by hfalati           #+#    #+#             */
-/*   Updated: 2025/01/12 12:17:42 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/01/16 10:32:19 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+short basic_check(int ac, char **nums);
+short	empty(int ac, char **nums);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	src_len;
