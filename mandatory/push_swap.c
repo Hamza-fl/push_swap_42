@@ -14,12 +14,13 @@
 
 short	basic_check(int ac, char **nums);
 short	empty(int ac, char **nums);
+void	free_str(char **str, int size);
+
 int	main(int ac, char **av)
 {
 	char	*s;
 	char	**str;
 	int		size;
-	int		i;
 
 	str = NULL;
 	if (basic_check(ac, av) == 0)
@@ -37,13 +38,8 @@ int	main(int ac, char **av)
 	if (!str)
 		return (0);
 	size = push_swap_len(str);
-	i = -1;
 	if (ac >= 2)
-	{
-		while (++i < size)
-			free(str[i]);
-		free(str);
-	}
+		free_str(str, size);
 	return (0);
 }
 
@@ -76,8 +72,8 @@ void	push_swap(char **av)
 
 short	empty(int ac, char **nums)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -89,7 +85,7 @@ short	empty(int ac, char **nums)
 	while (nums[i])
 	{
 		j = 0;
-		while(nums[i][j] == ' ')
+		while (nums[i][j] == ' ')
 			j++;
 		if (nums[i][j] == '\0')
 			return (0);
@@ -97,9 +93,10 @@ short	empty(int ac, char **nums)
 	}
 	return (1);
 }
-short basic_check(int ac, char **nums)
+
+short	basic_check(int ac, char **nums)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < ac)
@@ -109,4 +106,14 @@ short basic_check(int ac, char **nums)
 		i++;
 	}
 	return (1);
+}
+
+void	free_str(char **str, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < size)
+		free(str[i]);
+	free(str);
 }

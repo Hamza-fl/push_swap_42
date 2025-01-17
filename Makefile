@@ -5,7 +5,7 @@ BONUS_NAME = checker
 SRC = mandatory/ft_split.c mandatory/push.c mandatory/push_swap.c mandatory/push_swap_utils_1.c mandatory/push_swap_utils.c mandatory/reverse.c \
 		mandatory/rotate.c mandatory/sort.c mandatory/sort_stack.c mandatory/swap.c
 SRCB = bonus/checker.c bonus/ft_split.c bonus/ft_strcmp.c bonus/get_next_line.c bonus/get_next_line_utils.c bonus/push.c bonus/push_swap_utils_1.c \
-		bonus/push_swap_utils.c bonus/reverse.c bonus/rotate.c bonus/sort.c bonus/sort_stack.c bonus/swap.c
+		bonus/push_swap_utils.c bonus/reverse.c bonus/rotate.c bonus/sort.c bonus/sort_stack.c bonus/swap.c bonus/check_args.c
 OBJ = $(SRC:.c=.o)
 OBJB = $(SRCB:.c=.o)
 

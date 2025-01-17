@@ -26,6 +26,7 @@ int	main(int ac, char **av)
 
 	if (ac > 1)
 	{
+		basic_check(ac, av);
 		ft_join_args(av, &s);
 		str = ft_split(s, ' ');
 		free(s);

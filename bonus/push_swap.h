@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 23:14:04 by hfalati           #+#    #+#             */
-/*   Updated: 2025/01/14 16:44:15 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/01/17 11:00:02 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		push_swap_len(char **av);
 int		push_swap_atoi(char *av, int *stack);
 void	ft_join_args(char **av, char **str);
 size_t	ft_strlen(const char *str);
+void	basic_check(int ac, char **av);
 
 int		sort(t_stacks *stack, int size);
 int		sort_stack_a(t_stacks *stack, int len, int count);
