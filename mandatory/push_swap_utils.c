@@ -31,11 +31,12 @@ int	push_swap_atoi(char *str, int *stack)
 	i = 0;
 	sign = 1;
 	result = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
+	while (str[i] == ' ')
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
 			sign = -1;
+	ft_isdigit(str[i], stack);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')

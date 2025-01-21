@@ -36,6 +36,7 @@ int	push_swap_atoi(char *str, int *stack)
 	if (str[i] == '+' || str[i] == '-')
 		if (str[i++] == '-')
 			sign = -1;
+	ft_isdigit(str[i], stack);
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')

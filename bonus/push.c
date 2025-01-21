@@ -51,3 +51,9 @@ void	push_b(t_stacks *stack)
 	else
 		return ;
 }
+
+void	ft_isdigit(int c, int *stack)
+{
+	if (c < 48 || c > 57)
+		error_detected(stack);
+}
